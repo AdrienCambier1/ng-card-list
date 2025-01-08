@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-4 bg-white dark:bg-black shadow-md dark:shadow-none shadow-neutral-200/50 p-4 rounded-lg">
+    <h3 class="title-3">{{product.name}}</h3>
+    <div class="flex gap-2 items-center">
+        <i class="fa-regular fa-calendar-days text-red-400"></i>
+        <p class="color-text">{{product.createdDate | date:'EEEE, MMMM d, y' }}</p>
+    </div>
+    <div class="flex items-center justify-between gap-2 p-2 bg-neutral-100 dark:bg-neutral-900 rounded-lg">
+           
+            @if (product.isFavorite) {  
+                <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-caret-right text-red-400"></i>
+                    <p class="color-text">Favorite product</p>
+                </div> 
+                <app-dark-button (click)="switchfav()">
+                    <i class="fa-solid fa-heart text-neutral-900"></i>
+                </app-dark-button>            } 
+            @else {
+                <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-caret-right text-red-400"></i>
+                    <p class="color-text">Simple product</p>
+                </div> 
+                <app-dark-button (click)="switchfav()">
+                    <i class="fa-regular fa-heart text-neutral-900"></i>
+                </app-dark-button>
+            }
+        
+    </div>
+</div>

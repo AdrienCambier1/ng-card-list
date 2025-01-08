@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, RouterModule],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+    <app-header/>
+    <main class="min-h-screen pt-16 p-8 bg-gradient-to-b bg-neutral-100 dark:bg-neutral-900">
+      <router-outlet />
+    </main>
   `,
   styles: [],
 })
 export class AppComponent {
-  title = 'ng-card-list';
+  title = 'Card List';
 }

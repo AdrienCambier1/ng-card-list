@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-2 mt-8">
+    <h1 class="title-1">Retrouvez votre liste de cartes Harry Potter</h1>
+    <h2 class="title-2">{{countfav}} favorites</h2> 
+</div>
+<div class="mt-8 flex flex-col gap-2">
+    <app-search-input/>
+    <div class="relative">
+        <app-dark-button (click)="toggleDropDown()" [value]="'Trier par date >'"/>
+        <app-dropdown-menu [isDropdownMenuOpen]="isDropdownMenuOpen" [items]="menuItems"/>
+    </div> 
+</div>
+<div class="mt-8">
+    <h2 class="title-2">Cartes</h2>
+</div>
+<div class="gap-4 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+@for (p of (characters | sortByDate:sortOrder); track p.id) {
+    <app-product-card [product]=p (addItemEvent)="addItem($event)"/>
+}
+</div>
