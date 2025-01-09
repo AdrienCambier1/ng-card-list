@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('app/assets/font/Manrope/Manrope-VariableFont_wght.ttf');
+  font-family: "Manrope";
+  src: url("app/assets/font/Manrope/Manrope-VariableFont_wght.ttf");
 }
 
 * {
-    font-family: Manrope;
+  font-family: Manrope;
 }
 
 .title-1 {
-    @apply font-semibold text-xl text-neutral-900 dark:text-neutral-100;
+  @apply font-semibold text-xl text-neutral-900 dark:text-neutral-100;
 }
 
 .title-2 {
-    @apply border-b-2 border-red-400 w-fit text-neutral-900 dark:text-neutral-100;
+  @apply border-b-2 border-red-400 w-fit text-neutral-900 dark:text-neutral-100;
 }
 
 .title-3 {
-    @apply text-lg font-semibold text-neutral-900 dark:text-neutral-100;
+  @apply text-lg font-semibold text-neutral-900 dark:text-neutral-100;
 }
 
 .button {
-    @apply h-10 min-w-10 px-3 rounded-md font-medium hover:brightness-95 text-neutral-900;
+  @apply h-10 min-w-10 px-3 rounded-lg font-medium hover:brightness-95 text-neutral-900;
 }
 
 .color-text {
-    @apply text-neutral-900 dark:text-neutral-100
+  @apply text-neutral-900 dark:text-neutral-100;
 }
