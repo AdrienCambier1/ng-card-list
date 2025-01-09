@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   imports: [RouterOutlet, HeaderComponent, RouterModule],
   template: `
     <app-header/>
-    <main class="min-h-screen pt-16 p-8 bg-gradient-to-b bg-neutral-100 dark:bg-neutral-900">
+    <main class="min-h-screen pt-16 p-8 bg-neutral-100 dark:bg-neutral-950">
       <router-outlet />
     </main>
   `,
