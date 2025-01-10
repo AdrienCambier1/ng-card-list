@@ -1,4 +1,6 @@
 <input
-  class="h-10 w-full px-2 rounded-lg border border-transparent dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md dark:shadow-black/50 shadow-neutral-300/50 focus:outline-none color-text"
+  class="placeholder:text-neutral-600 dark:placeholder:text-neutral-400 h-10 w-full px-2 rounded-lg border border-transparent dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md dark:shadow-black/50 shadow-neutral-300/50 focus:outline-none color-text"
   placeholder="Effectuez une recherche"
+  [value]="value"
+  (input)="onInput($event)"
 />

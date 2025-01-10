@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-import { Characters } from '../../data/characters.data';
-import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import { SearchInputComponent } from '../../components/search-input/search-input.component';
-import { DarkButtonComponent } from '../../components/dark-button/dark-button.component';
-import { DropdownMenu } from '../../interfaces/dropdown-menu';
+import { Component, inject } from "@angular/core";
+import { ProductCardComponent } from "../../components/product-card/product-card.component";
+import { SearchInputComponent } from "../../components/search-input/search-input.component";
+import { DarkButtonComponent } from "../../components/dark-button/dark-button.component";
+import { DropdownMenu } from "../../interfaces/dropdown-menu";
 import { DropdownMenuComponent } from "../../components/dropdown-menu/dropdown-menu.component";
-import { CommonModule } from '@angular/common';
-import { SortByDatePipe } from '../../pipes/sort-by-date.pipe';
+import { CommonModule } from "@angular/common";
+import { SortByDatePipe } from "../../pipes/sort-by-date.pipe";
+import { SearchFilterPipe } from "../../pipes/search-filter.pipe";
+import { SortByNamePipe } from "../../pipes/sort-by-name.pipe";
+import { ProductService } from "../../services/product.service";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   imports: [
     ProductCardComponent,
     SearchInputComponent,
@@ -17,19 +19,28 @@ import { SortByDatePipe } from '../../pipes/sort-by-date.pipe';
     DropdownMenuComponent,
     CommonModule,
     SortByDatePipe,
+    SearchFilterPipe,
+    SortByNamePipe,
   ],
-  templateUrl: 'home.component.html',
-  styles: ``
+  templateUrl: "home.component.html",
+  styles: ``,
 })
 export class HomeComponent {
   countfav = 0;
-  characters = Characters;
-  isDropdownMenuOpen:boolean = false;
-  sortOrder: boolean = true;
+  characters = inject(ProductService).getProducts();
+  isDropdownMenuOpen: boolean = false;
+  sortOrderDate: boolean = true;
+  sortOrderName: boolean = true;
+  searchTerm: string = "";
 
   menuItems: DropdownMenu[] = [
-    {value:"Ordre croissant", action:()=> this.setSortOrder(true)},
-    {value:"Ordre décroissant", action:()=> this.setSortOrder(false)},
+    { value: "Ordre croissant", action: () => this.setSortOrderDate(true) },
+    { value: "Ordre décroissant", action: () => this.setSortOrderDate(false) },
+    { value: "Ordre A-Z", action: () => this.setSortOrderName(true) },
+    {
+      value: "Ordre Z-A",
+      action: () => this.setSortOrderName(false),
+    },
   ];
 
   addItem(item: number) {
@@ -40,8 +51,13 @@ export class HomeComponent {
     this.isDropdownMenuOpen = !this.isDropdownMenuOpen;
   }
 
-  setSortOrder(asc: boolean) {
-    this.sortOrder = asc;
+  setSortOrderDate(asc: boolean) {
+    this.sortOrderDate = asc;
+    this.toggleDropDown();
+  }
+
+  setSortOrderName(alphabetical: boolean) {
+    this.sortOrderName = alphabetical;
     this.toggleDropDown();
   }
 }

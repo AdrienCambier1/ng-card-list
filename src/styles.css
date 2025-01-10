@@ -16,7 +16,7 @@
 }
 
 .title-2 {
-  @apply border-b-2 border-red-400 w-fit text-neutral-900 dark:text-neutral-100;
+  @apply border-b-2 border-green-400 w-fit text-neutral-900 dark:text-neutral-100;
 }
 
 .title-3 {

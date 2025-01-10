@@ -3,7 +3,7 @@
   <h2 class="title-2">{{ countfav }} favorites</h2>
 </div>
 <div class="mt-8 flex flex-col gap-2">
-  <app-search-input />
+  <app-search-input [(value)]="searchTerm" />
   <div class="relative">
     <app-dark-button (click)="toggleDropDown()" [value]="'Trier par date >'" />
     <app-dropdown-menu
@@ -16,7 +16,8 @@
   <h2 class="title-2">Cartes</h2>
 </div>
 <div class="gap-4 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-  @for (p of (characters | sortByDate:sortOrder); track p.id) {
+  @for (p of (characters | searchFilter:searchTerm |sortByDate:sortOrderDate |
+  sortByName:sortOrderName); track p.id) {
   <app-product-card [product]="p" (addItemEvent)="addItem($event)" />
   }
 </div>
