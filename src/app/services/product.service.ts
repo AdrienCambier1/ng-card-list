@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Product } from "../interfaces/product";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -126,11 +127,24 @@ export class ProductService {
     },
   ];
 
+  private favoriteCount = new BehaviorSubject<number>(0);
+  favoriteCount$ = this.favoriteCount.asObservable();
+
+  private updateFavoriteCount() {
+    const count = this.products.filter((p) => p.isFavorite).length;
+    this.favoriteCount.next(count);
+  }
+
   getProducts(): Product[] {
     return this.products;
   }
 
   getProduct(id: number) {
     return this.products[id];
+  }
+
+  switchFav(product: Product) {
+    product.isFavorite = !product.isFavorite;
+    this.updateFavoriteCount();
   }
 }

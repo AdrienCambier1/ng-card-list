@@ -1,7 +1,8 @@
-import { Component, Input, EventEmitter, Output } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
 import { Product } from "../../interfaces/product";
 import { CommonModule } from "@angular/common";
 import { DarkButtonComponent } from "../dark-button/dark-button.component";
+import { ProductService } from "../../services/product.service";
 
 @Component({
   selector: "app-product-card",
@@ -17,10 +18,10 @@ export class ProductCardComponent {
     isFavorite: false,
     imageUrl: "",
   };
-  @Output() addItemEvent = new EventEmitter<number>();
+
+  productService = inject(ProductService);
 
   switchfav() {
-    this.product.isFavorite = !this.product.isFavorite;
-    this.addItemEvent.emit(this.product.isFavorite ? 1 : -1);
+    this.productService.switchFav(this.product);
   }
 }
