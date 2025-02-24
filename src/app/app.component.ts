@@ -9,7 +9,7 @@ import { RouterModule } from "@angular/router";
   imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterModule],
   template: `
     <app-header />
-    <main class="min-h-screen pt-16 p-8 bg-neutral-100 dark:bg-neutral-950">
+    <main class="min-h-screen pt-16 p-8">
       <router-outlet />
     </main>
     <app-footer />
