@@ -8,16 +8,9 @@
     />
     <div class="flex flex-col gap-4">
       <h3 class="title-3">{{ product.name }}</h3>
-      <div class="flex gap-2 items-center">
-        <div class="p-2 bg-green-50 dark:bg-green-950 rounded-full">
-          <i
-            class="fa-regular fa-calendar-days text-green-500 h-4 w-4 p-2.5 rounded-full flex items-center justify-center"
-          ></i>
-        </div>
-        <p class="color-text">
-          {{ product.createdDate | date : "fullDate" }}
-        </p>
-      </div>
+      <p class="text-neutral-500">
+        {{ product.createdDate | date : "fullDate" }}
+      </p>
     </div>
   </div>
   <div
