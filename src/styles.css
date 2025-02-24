@@ -28,7 +28,7 @@ body {
 }
 
 .button {
-  @apply h-10 min-w-10 px-3 rounded-lg font-medium hover:brightness-95 text-neutral-900;
+  @apply h-10 min-w-10 px-3 rounded-lg font-medium hover:opacity-75 transition-all ease-in-out text-neutral-900;
 }
 
 .color-text {
