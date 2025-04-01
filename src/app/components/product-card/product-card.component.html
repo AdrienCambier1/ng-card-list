@@ -1,37 +1,36 @@
 <div
-  class="flex flex-col gap-4 border border-transparent dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md dark:shadow-black/50 shadow-neutral-300/50 p-4 rounded-lg"
+  class="flex flex-col gap-4 border border-transparent dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md shadow-gray-200/50 dark:shadow-black/50 p-4 rounded-lg"
 >
-  <div class="flex gap-4 items-center">
+  <div class="flex justify-between items-start">
     <img
-      class="h-24 w-24 rounded-lg object-cover object-top"
+      class="h-24 w-24 rounded-full object-cover object-top"
       [src]="product.imageUrl"
     />
+    @if (product.isFavorite) {
+
+    <button
+      class="h-8 w-8 text-blue-400 hover:text-red-500 hover:bg-red-500/20 rounded-full transition-all ease-in-out"
+      (click)="switchfav()"
+    >
+      <i class="fa-solid fa-heart"></i>
+    </button>
+    } @else {
+
+    <button
+      class="h-8 w-8 dark:text-neutral-100 text-neutral-900 hover:text-blue-400 hover:bg-blue-400/20 rounded-full transition-all ease-in-out"
+      (click)="switchfav()"
+    >
+      <i class="fa-regular fa-heart"></i>
+    </button>
+    }
+  </div>
+  <div class="flex justify-between items-end">
     <div class="flex flex-col gap-4">
       <h3 class="title-3">{{ product.name }}</h3>
       <p class="text-neutral-500">
         {{ product.createdDate | date : "fullDate" }}
       </p>
     </div>
-  </div>
-  <div
-    class="flex items-center justify-between gap-2 p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg"
-  >
-    @if (product.isFavorite) {
-    <div class="flex gap-2 items-center">
-      <i class="fa-solid fa-caret-right text-green-500"></i>
-      <p class="color-text">Favorite product</p>
-    </div>
-    <app-dark-button (click)="switchfav()">
-      <i class="fa-solid fa-heart text-neutral-900"></i>
-    </app-dark-button>
-    } @else {
-    <div class="flex gap-2 items-center">
-      <i class="fa-solid fa-caret-right text-green-500"></i>
-      <p class="color-text">Simple product</p>
-    </div>
-    <app-dark-button (click)="switchfav()">
-      <i class="fa-regular fa-heart text-neutral-900"></i>
-    </app-dark-button>
-    }
+    <p class="text-blue-400">15€</p>
   </div>
 </div>

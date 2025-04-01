@@ -20,7 +20,7 @@ body {
 }
 
 .title-2 {
-  @apply border-b-2 border-green-400 w-fit text-neutral-900 dark:text-neutral-100;
+  @apply border-b-2 border-blue-400 w-fit text-neutral-900 dark:text-neutral-100;
 }
 
 .title-3 {
@@ -28,7 +28,7 @@ body {
 }
 
 .button {
-  @apply h-10 min-w-10 px-3 rounded-lg font-medium hover:opacity-75 transition-all ease-in-out text-neutral-900;
+  @apply h-10 min-w-10 rounded-lg font-medium hover:opacity-75 transition-all ease-in-out;
 }
 
 .color-text {
