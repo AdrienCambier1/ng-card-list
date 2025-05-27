@@ -1,5 +1,5 @@
 <div
-  class="mt-2 absolute flex flex-col gap-2 p-2 bg-white dark:bg-neutral-950 shadow-md shadow-gray-200/50 dark:shadow-black/50 border border-transparent dark:border-neutral-800 rounded-lg top-[100%] left-0 transition-opacity ease-in-out dropdown-menu"
+  class="dropdown-menu"
   [ngClass]="{
     'opacity-0 pointer-events-none': !isDropdownMenuOpen,
     'opacity-100': isDropdownMenuOpen
@@ -8,7 +8,7 @@
   <button
     *ngFor="let item of items"
     (click)="item.action()"
-    class="py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 w-full rounded-lg text-left color-text"
+    class="dropdown-btn"
   >
     {{ item.value }}
   </button>

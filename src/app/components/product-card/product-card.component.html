@@ -1,15 +1,10 @@
-<div
-  class="flex flex-col gap-4 border border-transparent dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md shadow-gray-200/50 dark:shadow-black/50 p-4 rounded-lg"
->
+<div class="product-card">
   <div class="flex justify-between items-start">
-    <img
-      class="h-24 w-24 rounded-full object-cover object-top"
-      [src]="product.imageUrl"
-    />
+    <img class="logo" [src]="product.imageUrl" />
     @if (product.isFavorite) {
 
     <button
-      class="h-8 w-8 text-blue-400 hover:text-red-500 hover:bg-red-500/20 rounded-full transition-all ease-in-out"
+      class="fav-btn text-blue-400 hover:text-red-500 hover:bg-red-500/20"
       (click)="switchfav()"
     >
       <i class="fa-solid fa-heart"></i>
@@ -17,7 +12,7 @@
     } @else {
 
     <button
-      class="h-8 w-8 dark:text-neutral-100 text-neutral-900 hover:text-blue-400 hover:bg-blue-400/20 rounded-full transition-all ease-in-out"
+      class="fav-btn dark:text-neutral-100 text-neutral-900 hover:text-blue-400 hover:bg-blue-400/20"
       (click)="switchfav()"
     >
       <i class="fa-regular fa-heart"></i>
@@ -26,8 +21,8 @@
   </div>
   <div class="flex justify-between items-end">
     <div class="flex flex-col gap-4">
-      <h3 class="title-3">{{ product.name }}</h3>
-      <p class="text-neutral-500">
+      <h3>{{ product.name }}</h3>
+      <p class="dark-text">
         {{ product.createdDate | date : "fullDate" }}
       </p>
     </div>

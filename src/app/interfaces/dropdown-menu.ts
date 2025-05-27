@@ -1,4 +1,4 @@
 export interface DropdownMenu {
-    value:string;
-    action: () => void;
+  value: string;
+  action: () => void;
 }

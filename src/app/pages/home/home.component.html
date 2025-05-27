@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-2 mt-8">
-  <h1 class="title-1">Retrouvez votre liste de cartes Harry Potter</h1>
-  <h2 class="title-2">{{ countFav }} favorites</h2>
+  <h1>Retrouvez votre liste de cartes Harry Potter</h1>
+  <h2>{{ countFav }} favorites</h2>
 </div>
 <div class="mt-8 flex flex-col gap-2">
   <app-search-input [(value)]="searchTerm" />
@@ -13,6 +13,6 @@
   </div>
 </div>
 <div class="mt-8">
-  <h2 class="title-2">Cartes</h2>
+  <h2>Cartes</h2>
 </div>
 <app-products-list [searchTerm]="searchTerm" [sortOrder]="sortOrder" />

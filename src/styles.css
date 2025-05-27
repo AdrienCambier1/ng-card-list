@@ -2,35 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Manrope";
-  src: url("app/assets/font/Manrope/Manrope-VariableFont_wght.ttf");
+@layer base {
+  @font-face {
+    font-family: "Manrope";
+    src: url("app/assets/font/Manrope/Manrope-VariableFont_wght.ttf");
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-neutral-100 dark:bg-neutral-950 font-['Manrope'] text-neutral-900 dark:text-neutral-100 antialiased;
+  }
+
+  header {
+    @apply fixed bg-white dark:bg-neutral-950 h-16 w-full flex items-center justify-between px-6 text-neutral-900 shadow common-border-b z-50;
+  }
+
+  footer {
+    @apply bg-white dark:bg-neutral-950 border-t border-neutral-300/50 dark:border-neutral-800 w-full flex items-center px-6 py-4;
+  }
+
+  footer p {
+    @apply text-sm dark-text;
+  }
+
+  /**********/
+  /* Titles */
+  /**********/
+
+  h1,
+  header .logo {
+    @apply font-semibold text-xl text-neutral-900 dark:text-neutral-100;
+  }
+
+  h3 {
+    @apply text-lg font-semibold text-neutral-900 dark:text-neutral-100;
+  }
+
+  h2 {
+    @apply border-b-2 border-blue-400 w-fit text-neutral-900 dark:text-neutral-100;
+  }
 }
 
-* {
-  font-family: Manrope;
+@layer components {
+  .dropdown-menu {
+    @apply mt-2 absolute flex flex-col gap-2 p-2 bg-white dark:bg-neutral-950 shadow common-border rounded-lg top-[100%] left-0 transition-opacity ease-in-out;
+  }
+
+  .search-input {
+    @apply placeholder:dark-text h-10 w-full px-4 rounded-lg common-border bg-white dark:bg-neutral-900 shadow focus:outline-none;
+  }
+
+  /*********/
+  /* Cards */
+  /*********/
+
+  .product-card {
+    @apply flex flex-col gap-4 common-border bg-white dark:bg-neutral-900 shadow p-4 rounded-lg;
+  }
+
+  .product-card .logo {
+    @apply h-24 w-24 rounded-full object-cover object-top;
+  }
+
+  /***********/
+  /* Buttons */
+  /***********/
+
+  .button {
+    @apply h-10 min-w-10 rounded-lg font-medium hover:opacity-75 transition-all ease-in-out;
+  }
+
+  .dark-btn {
+    @apply bg-blue-400 text-neutral-100 dark:text-neutral-900 px-4;
+  }
+  .neutral-btn {
+    @apply bg-neutral-100 dark:bg-neutral-800/75 text-neutral-900 dark:text-neutral-100;
+  }
+
+  .dropdown-btn {
+    @apply py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 w-full rounded-lg text-left;
+  }
+
+  .fav-btn {
+    @apply h-8 w-8 rounded-full transition-all ease-in-out;
+  }
 }
 
-body {
-  @apply bg-neutral-100 dark:bg-neutral-950;
-}
+@layer utilities {
+  .shadow {
+    @apply shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-none;
+  }
 
-.title-1 {
-  @apply font-semibold text-xl text-neutral-900 dark:text-neutral-100;
-}
+  .common-border {
+    @apply border border-transparent dark:border-neutral-800;
+  }
 
-.title-2 {
-  @apply border-b-2 border-blue-400 w-fit text-neutral-900 dark:text-neutral-100;
-}
+  .common-border-b {
+    @apply border-b border-transparent dark:border-neutral-800;
+  }
 
-.title-3 {
-  @apply text-lg font-semibold text-neutral-900 dark:text-neutral-100;
-}
-
-.button {
-  @apply h-10 min-w-10 rounded-lg font-medium hover:opacity-75 transition-all ease-in-out;
-}
-
-.color-text {
-  @apply text-neutral-900 dark:text-neutral-100;
+  .dark-text {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
 }
