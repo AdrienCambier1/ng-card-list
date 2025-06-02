@@ -17,11 +17,11 @@
   }
 
   header {
-    @apply fixed bg-white dark:bg-neutral-950 h-16 w-full flex items-center justify-between px-6 text-neutral-900 shadow common-border-b z-50;
+    @apply fixed bg-white dark:bg-neutral-950 h-16 w-full flex items-center justify-between px-4 sm:px-8 text-neutral-900 shadow common-border-b z-50;
   }
 
   footer {
-    @apply bg-white dark:bg-neutral-950 border-t border-neutral-300/50 dark:border-neutral-800 w-full flex items-center px-6 py-4;
+    @apply bg-white dark:bg-neutral-950 border-t border-neutral-300/50 dark:border-neutral-800 w-full flex items-center px-4 sm:px-8 py-4;
   }
 
   footer p {
