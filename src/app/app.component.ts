@@ -8,7 +8,7 @@ import { RouterModule } from "@angular/router";
   imports: [RouterOutlet, HeaderComponent, RouterModule],
   template: `
     <app-header />
-    <main class="min-h-[100dvh] !pt-16 p-6">
+    <main class="min-h-[100vh] !pt-16 p-6">
       <router-outlet />
     </main>
     <footer><p class="">© 2025, Adrien Cambier</p></footer>
