@@ -24,10 +24,6 @@
     @apply bg-white dark:bg-neutral-950 border-t border-neutral-300/50 dark:border-neutral-800 w-full flex items-center px-6 py-4;
   }
 
-  footer p {
-    @apply text-sm dark-text;
-  }
-
   /**********/
   /* Titles */
   /**********/
