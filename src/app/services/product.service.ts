@@ -13,7 +13,7 @@ export class ProductService {
       isFavorite: false,
       createdDate: new Date(1980, 6, 31),
       imageUrl:
-        "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg",
+        "https://static0.srcdn.com/wordpress/wp-content/uploads/2025/07/harry-potter-daniel-radcliffe-looking-nervous-in-the-harry-potter-movies.jpg?w=1600&h=900&fit=crop",
     },
     {
       id: 1,
